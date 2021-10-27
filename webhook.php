@@ -19,6 +19,9 @@ foreach ($request_json['events'] as $event)
 			if("ขอชื่อผู้พัฒนาระบบ"==$text){
 			      $reply_message = "นายมาร์ช ธนากรณ์";			
 			}
+			if(("covid-19"==$text) || ("covid-19"==$text) || ("สถานการณ์โควิด"==$text) || ("สถานการณ์โควิดในอนาคต"==$text)){
+			      $reply_message = "ตายระนาว!!";			
+			}
 			
 		} else {
 			$reply_message = 'ฉันได้รับ "'.$event['message']['type'].'" ของคุณแล้ว!';
