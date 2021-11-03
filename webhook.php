@@ -27,6 +27,16 @@ foreach ($request_json['events'] as $event)
                                 $$result_json = json_decode($$result, false);   // Decode JSON request
 				// ตาย 57 คน.
 				$reply_message =  "ตาย  "  .  $$result_json["new_death"]; . "คน.";
+			
+			
+			} else {
+			$reply_message = 'ฉันได้รับ "'.$event['message']['type'].'" ของคุณแล้ว!';
+		}
+		
+	                } else {
+		        $reply_message = 'ฉันได้รับ Event "'.$event['type'].'" ของคุณแล้ว!';
+	        }
+		
 	
 	// reply message
 	$post_header = array('Content-Type: application/json', 'Authorization: Bearer ' . $channelAccessToken);
