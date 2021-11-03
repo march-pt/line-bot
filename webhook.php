@@ -22,20 +22,7 @@ foreach ($request_json['events'] as $event)
 			if(("covid-19"==$text) || ("covid-19"==$text) || ("สถานการณ์โควิด"==$text) || ("สถานการณ์โควิดในอนาคต"==$text)){
 			        $reply_message = "ตายระนาว!!";
 				
-				$result = file_get_contents('https://covid19.ddc.moph.go.th/api/Cases/today-cases-all');   // Get request content
-
-                                $$result_json = json_decode($$result, false);   // Decode JSON request
-				// ตาย 57 คน.
-				$reply_message =  "ตาย  "  .  $$result_json["new_death"]; . "คน.";
-			
-			
-			} else {
-			$reply_message = 'ฉันได้รับ "'.$event['message']['type'].'" ของคุณแล้ว!';
-		}
-		
-	                } else {
-		        $reply_message = 'ฉันได้รับ Event "'.$event['type'].'" ของคุณแล้ว!';
-	        }
+				
 		
 	
 	// reply message
